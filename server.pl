@@ -6,15 +6,6 @@ use Mojolicious::Lite;
 use 5.20.0;
 use experimental 'signatures';
 
-under(sub {
-        my $c = shift;
-        my $customer = "suncorp";
-        return 1 if $customer eq 'suncorp';
-
-        $c->render(template => 'denied');
-        return undef;
-    });
-
 # Render template "index.html.ep" from the DATA section
 get '/' => {template => 'index'};
 
